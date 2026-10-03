@@ -1,0 +1,11 @@
+reference,quantity,value,connection
+board,1,Seeed Studio XIAO ESP32-C5,USB power and data
+R0,1,8.2k,D4 GPIO23 to VIDEO
+R1,1,3.9k,D5 GPIO24 to VIDEO
+R2,1,2.0k,D6 GPIO11 to VIDEO
+R3,1,1.0k,D7 GPIO12 to VIDEO
+R4,1,470,D8 GPIO8 to VIDEO
+R5,1,240,D9 GPIO9 to VIDEO
+Rshunt,1,200,VIDEO to GND
+Cfilter,1,470pF,VIDEO to GND
+output,1,CVBS connector,VIDEO and common GND to display

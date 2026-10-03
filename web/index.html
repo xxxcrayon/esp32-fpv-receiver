@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#10151c" />
+    <title>ESP32 FPV · USB console</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <header>
+      <div>
+        <span class="eyebrow">XIAO ESP32-C5 / C5VRX</span>
+        <h1>FPV receiver</h1>
+      </div>
+      <span id="state">OFFLINE</span><button id="connect">Connect USB</button>
+    </header>
+    <main>
+      <section class="intro">
+        <h2>The picture goes to your monitor</h2>
+        <p>
+          Connect the resistor DAC to a composite video input. This console
+          controls the receiver and displays its USB messages at 115200 baud.
+        </p>
+        <nav>
+          <a
+            href="https://github.com/codingard/esp32-fpv-receiver#build-and-connect"
+            target="_blank"
+            rel="noopener"
+            >Build guide ↗</a
+          ><a
+            href="https://github.com/codingard/esp32-fpv-receiver/blob/main/docs/wiring.svg"
+            target="_blank"
+            rel="noopener"
+            >Wiring ↗</a
+          ><a
+            href="https://twotoz.github.io/C5VRX/"
+            target="_blank"
+            rel="noopener"
+            >Install firmware ↗</a
+          >
+        </nav>
+      </section>
+      <div class="controls">
+        <button data-command="diagnostics" disabled>Diagnostics</button
+        ><button data-command="channel" disabled>Next channel</button
+        ><button data-command="gainDown" disabled>Gain −</button
+        ><button data-command="gainUp" disabled>Gain +</button
+        ><span>Changes can interrupt the picture</span>
+      </div>
+      <p id="message" role="status">
+        Connect your board, then read Diagnostics. Close other serial tools
+        first.
+      </p>
+      <section class="terminal">
+        <div class="terminal-head">
+          <span>DEVICE OUTPUT</span><button id="clear">Clear</button
+          ><button id="download" disabled>Save log ↓</button>
+        </div>
+        <pre
+          id="log"
+          tabindex="0"
+          aria-label="Text received from the connected device"
+        ></pre>
+        <span class="empty">Waiting for device output</span>
+      </section>
+      <footer>
+        Receiver firmware and reference circuit:
+        <a href="https://github.com/Twotoz/C5VRX" target="_blank" rel="noopener"
+          >C5VRX by Twotoz and contributors</a
+        >
+        ·
+        <a href="https://twotoz.github.io/C5VRX/" target="_blank" rel="noopener"
+          >Official website &amp; Discord invite</a
+        >
+        <p>
+          Unofficial build companion · Physical validation pending · Logs stay
+          in your browser
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>

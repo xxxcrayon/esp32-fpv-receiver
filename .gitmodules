@@ -1,0 +1,3 @@
+[submodule "firmware/C5VRX"]
+	path = firmware/C5VRX
+	url = https://github.com/Twotoz/C5VRX.git
