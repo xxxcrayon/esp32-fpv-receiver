@@ -73,6 +73,21 @@ you need this exact revision.
 
 ## Browser console
 
+The interface recreates the original FPV animation's instrument layout: receiver
+controls on the left, frequency readout above spectrum and waterfall panels.
+Frequency, channel and bandwidth are populated only from actual C5VRX diagnostic
+lines, with a report timestamp. They clear on disconnect or a new settings request.
+These are snapshots; press **Read device settings** after changing the board outside
+the browser. Channel and gain buttons also request a fresh diagnostic report.
+
+**Spectrum and waterfall remain empty, including when a board is connected.**
+The pinned firmware's USB console does not export a continuous FFT-bin stream.
+This version implements no spectrum input adapter or FFT renderer; supporting
+live plots requires a separately implemented and validated firmware data path.
+The 40 MS/s label describes the firmware design, not a browser measurement.
+There are no cosmetic sliders that pretend to configure unsupported FFT settings.
+
+
 Use desktop Chrome or Edge on HTTPS or localhost. The console opens USB at
 115200 baud and offers the documented diagnostics, next-channel and manual-gain
 commands. It displays only text received from the device. Selecting a serial

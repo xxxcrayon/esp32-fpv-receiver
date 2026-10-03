@@ -22,3 +22,7 @@ firmware commit/release, OS/browser, wiring, display and test transmitter.
 
 The website displays raw received text and connected/disconnected status. It
 cannot prove RF lock and does not implement spectrum or video acquisition.
+
+## Instrument layout update
+
+The frequency, channel and bandwidth parser is checked against pinned upstream diagnostic line formats and split USB chunks. Spectrum/waterfall panels intentionally remain empty: no FFT transport or renderer is implemented. Verify displayed snapshots on a physical board with Read device settings; use this again after external board changes. Disconnect must clear all snapshot fields.

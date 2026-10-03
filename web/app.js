@@ -1,10 +1,24 @@
 // SPDX-License-Identifier: GPL-3.0-only
 import { SerialConsole, boundedLog } from "./serial.js";
+import { DiagnosticReader } from "./diagnostics.js";
 const $ = (id) => document.getElementById(id);
 let connection = null,
   busy = false,
   log = "",
   pending = false;
+const diagnostics = new DiagnosticReader((report) => {
+  if (report.frequency) $("frequency").textContent = String(report.frequency).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  if (report.channel) $("channel").textContent = report.channel;
+  if (report.bandwidth) $("bandwidth").textContent = report.bandwidth;
+  $("snapshot").textContent = "Device report · " + new Date().toLocaleTimeString();
+});
+function resetReadings() {
+  diagnostics.reset();
+  $("frequency").textContent = "—.———.———.———";
+  $("channel").textContent = "—";
+  $("bandwidth").textContent = "—";
+  $("snapshot").textContent = "No device report";
+}
 function controls() {
   const ready = connection && !connection.closed;
   $("connect").disabled = busy;
@@ -18,6 +32,7 @@ function message(text) {
   $("message").textContent = text;
 }
 function append(text) {
+  diagnostics.feed(text);
   log = boundedLog(log, text);
   if (!pending) {
     pending = true;
@@ -33,6 +48,7 @@ async function close() {
   const c = connection;
   connection = null;
   await c?.close();
+  resetReadings();
   $("state").textContent = "OFFLINE";
   $("state").className = "";
   controls();
@@ -82,7 +98,9 @@ for (const button of document.querySelectorAll("[data-command]"))
     busy = true;
     controls();
     try {
+      resetReadings();
       await connection.send(button.dataset.command);
+      if (button.dataset.command !== "diagnostics") await connection.send("diagnostics");
       message("Command sent. Check the device output below for its result.");
     } catch (error) {
       await fail(error);

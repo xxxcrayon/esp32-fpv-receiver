@@ -1,84 +1,15 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content="#10151c" />
-    <title>ESP32 FPV · USB console</title>
-    <link rel="stylesheet" href="style.css" />
-    <script type="module" src="app.js"></script>
-  </head>
-  <body>
-    <header>
-      <div>
-        <span class="eyebrow">XIAO ESP32-C5 / C5VRX</span>
-        <h1>FPV receiver</h1>
-      </div>
-      <span id="state">OFFLINE</span><button id="connect">Connect USB</button>
-    </header>
-    <main>
-      <section class="intro">
-        <h2>The picture goes to your monitor</h2>
-        <p>
-          Connect the resistor DAC to a composite video input. This console
-          controls the receiver and displays its USB messages at 115200 baud.
-        </p>
-        <nav>
-          <a
-            href="https://github.com/codingard/esp32-fpv-receiver#build-and-connect"
-            target="_blank"
-            rel="noopener"
-            >Build guide ↗</a
-          ><a
-            href="https://github.com/codingard/esp32-fpv-receiver/blob/main/docs/wiring.svg"
-            target="_blank"
-            rel="noopener"
-            >Wiring ↗</a
-          ><a
-            href="https://twotoz.github.io/C5VRX/"
-            target="_blank"
-            rel="noopener"
-            >Install firmware ↗</a
-          >
-        </nav>
-      </section>
-      <div class="controls">
-        <button data-command="diagnostics" disabled>Diagnostics</button
-        ><button data-command="channel" disabled>Next channel</button
-        ><button data-command="gainDown" disabled>Gain −</button
-        ><button data-command="gainUp" disabled>Gain +</button
-        ><span>Changes can interrupt the picture</span>
-      </div>
-      <p id="message" role="status">
-        Connect your board, then read Diagnostics. Close other serial tools
-        first.
-      </p>
-      <section class="terminal">
-        <div class="terminal-head">
-          <span>DEVICE OUTPUT</span><button id="clear">Clear</button
-          ><button id="download" disabled>Save log ↓</button>
-        </div>
-        <pre
-          id="log"
-          tabindex="0"
-          aria-label="Text received from the connected device"
-        ></pre>
-        <span class="empty">Waiting for device output</span>
-      </section>
-      <footer>
-        Receiver firmware and reference circuit:
-        <a href="https://github.com/Twotoz/C5VRX" target="_blank" rel="noopener"
-          >C5VRX by Twotoz and contributors</a
-        >
-        ·
-        <a href="https://twotoz.github.io/C5VRX/" target="_blank" rel="noopener"
-          >Official website &amp; Discord invite</a
-        >
-        <p>
-          Unofficial build companion · Physical validation pending · Logs stay
-          in your browser
-        </p>
-      </footer>
-    </main>
-  </body>
-</html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#10151c"><title>ESP32-C5 · FPV receiver</title><link rel="stylesheet" href="style.css"><script type="module" src="app.js"></script></head>
+<body>
+<header><span class="device">☰ &nbsp; ESP32-C5</span><div class="tuning"><span id="frequency">—.———.———.———</span><small>Hz</small></div><span class="header-note">C5VRX / FPV</span><span id="state">OFFLINE</span><button id="connect">Connect USB</button></header>
+<div class="workspace"><aside>
+<section><h2>▾ Receiver</h2><label>Band<span class="field">5.8 GHz analog FPV</span></label><label>Channel <span id="channel" class="field">—</span></label><button data-command="channel" disabled>Next channel</button><label>Bandwidth <span id="bandwidth" class="field">—</span></label><label>Manual gain</label><div class="pair"><button data-command="gainDown" disabled>−</button><button data-command="gainUp" disabled>+</button></div><small>Changes can interrupt the picture</small></section>
+<section><h2>▾ Sampling</h2><label>Capture rate<span class="field muted">40 MS/s · firmware design</span></label><label>FFT size<span class="field muted">Not reported</span></label><label>Window<span class="field muted">Not reported</span></label></section>
+<section><h2>▾ Diagnostics</h2><button data-command="diagnostics" disabled>Read device settings</button><small id="snapshot">No device report</small></section>
+<nav><a href="https://github.com/codingard/esp32-fpv-receiver/blob/main/docs/BUILD.md" target="_blank" rel="noopener">Build guide ↗</a><a href="https://github.com/codingard/esp32-fpv-receiver/blob/main/docs/wiring.svg" target="_blank" rel="noopener">Wiring ↗</a><a href="https://twotoz.github.io/C5VRX/" target="_blank" rel="noopener">Install firmware ↗</a></nav>
+</aside><main>
+<section class="spectrum" aria-label="Spectrum unavailable"><span class="plot-label">SPECTRUM</span><div class="grid"></div><div class="no-data"><strong>No spectrum stream</strong><span>C5VRX USB diagnostics do not provide FFT bins.</span></div><div class="axis"><span>Frequency —</span><span>MHz</span></div></section>
+<section class="waterfall" aria-label="Waterfall unavailable"><span class="plot-label">WATERFALL</span><div class="no-data"><strong>No waterfall stream</strong><span>Video output → composite monitor / goggles</span></div><div class="scale" aria-hidden="true"></div></section>
+<details class="console" open><summary>Device console <span>115200 baud</span></summary><p id="message" role="status">Connect your board, then read Diagnostics. Close other serial tools first.</p><div class="terminal-head"><span>DEVICE OUTPUT</span><button id="clear">Clear</button><button id="download" disabled>Save log ↓</button></div><pre id="log" tabindex="0" aria-label="Text received from the connected device"></pre></details>
+<footer>Firmware &amp; circuit: <a href="https://github.com/Twotoz/C5VRX">C5VRX by Twotoz and contributors</a> · Physical validation pending</footer>
+</main></div></body></html>
